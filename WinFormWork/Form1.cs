@@ -117,5 +117,25 @@ namespace WinFormWork
         {
 
         }
+
+        private void cmdDelete_Click(object sender, EventArgs e)
+        {
+            mydata.Delete(tbID.Text);
+            cmdSearch_Click_1(sender, e);
+        }
+        //TODO:
+        //
+        //ARE YOU SURE PROMPT ON DELETE BUTTON
+        //HINT:::
+        //
+        //msdn "message box" class
+        //example at bottom
+        //
+        //put try catch around insert
+        //inside data class in insert method
+        //if insert fails don't die
+        //catch any exception
+        //
+        //delete should NOT show unless updating
     }
 }

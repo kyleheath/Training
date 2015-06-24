@@ -302,5 +302,35 @@ namespace DataAccess
 
             }
         }
+
+        public void Delete(string IDDelete)
+        {
+            if ( IDDelete != null)
+            {
+                SqlConnection Connection1 = new SqlConnection("server=.\\SQLEXPRESS; Trusted_Connection=yes; database=NORTHWND");
+                try                               // '.' means this computer                  //database is the NAME of database,
+                {                                 // which would be used IF                   //not the type or kind
+                    Connection1.Open();          // on local server/internet
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }                   
+               
+
+                SqlCommand Command1 = new SqlCommand();
+                Command1.Connection = Connection1;
+
+                Command1.CommandText = "delete from dbo.Customers where CustomerID = @CustomerID";
+
+                Command1.Parameters.Add(new SqlParameter("@CustomerID", SqlDbType.VarChar, 50));
+
+                Command1.Parameters["@CustomerID"].Value = IDDelete;
+
+                Command1.ExecuteNonQuery();
+
+                Connection1.Close();
+            }
+        }
     }
 }
