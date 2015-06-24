@@ -63,6 +63,9 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.cmdInsert = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lbMode = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV1)).BeginInit();
@@ -86,21 +89,22 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(933, 493);
-            this.tableLayoutPanel1.TabIndex = 8;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tableLayoutPanel1.TabIndex = 100;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.cmdSearch, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tbSearchCompany, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tbSearchContact, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.cmdInsert, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -113,10 +117,10 @@
             // cmdSearch
             // 
             this.cmdSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmdSearch.Location = new System.Drawing.Point(373, 3);
+            this.cmdSearch.Location = new System.Drawing.Point(455, 3);
             this.cmdSearch.Name = "cmdSearch";
             this.tableLayoutPanel2.SetRowSpan(this.cmdSearch, 2);
-            this.cmdSearch.Size = new System.Drawing.Size(179, 61);
+            this.cmdSearch.Size = new System.Drawing.Size(220, 61);
             this.cmdSearch.TabIndex = 5;
             this.cmdSearch.Text = "Search";
             this.cmdSearch.UseVisualStyleBackColor = true;
@@ -126,7 +130,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(131, 10);
+            this.label1.Location = new System.Drawing.Point(172, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 6;
@@ -135,16 +139,16 @@
             // tbSearchCompany
             // 
             this.tbSearchCompany.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tbSearchCompany.Location = new System.Drawing.Point(188, 6);
+            this.tbSearchCompany.Location = new System.Drawing.Point(229, 6);
             this.tbSearchCompany.Name = "tbSearchCompany";
             this.tbSearchCompany.Size = new System.Drawing.Size(100, 20);
-            this.tbSearchCompany.TabIndex = 7;
+            this.tbSearchCompany.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(138, 43);
+            this.label2.Location = new System.Drawing.Point(179, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 8;
@@ -153,10 +157,10 @@
             // tbSearchContact
             // 
             this.tbSearchContact.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tbSearchContact.Location = new System.Drawing.Point(188, 40);
+            this.tbSearchContact.Location = new System.Drawing.Point(229, 40);
             this.tbSearchContact.Name = "tbSearchContact";
             this.tbSearchContact.Size = new System.Drawing.Size(100, 20);
-            this.tbSearchContact.TabIndex = 9;
+            this.tbSearchContact.TabIndex = 1;
             // 
             // dGV1
             // 
@@ -187,8 +191,6 @@
             this.tableLayoutPanel3.Controls.Add(this.label9, 3, 1);
             this.tableLayoutPanel3.Controls.Add(this.label10, 3, 2);
             this.tableLayoutPanel3.Controls.Add(this.label11, 3, 3);
-            this.tableLayoutPanel3.Controls.Add(this.label12, 3, 4);
-            this.tableLayoutPanel3.Controls.Add(this.label13, 3, 5);
             this.tableLayoutPanel3.Controls.Add(this.tbFax, 4, 5);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.tbContact, 1, 2);
@@ -201,6 +203,10 @@
             this.tableLayoutPanel3.Controls.Add(this.label14, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.label16, 2, 4);
             this.tableLayoutPanel3.Controls.Add(this.label15, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label12, 3, 4);
+            this.tableLayoutPanel3.Controls.Add(this.lbMode, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.label17, 2, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label13, 3, 5);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 248);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -221,7 +227,7 @@
             this.tbAddress.Location = new System.Drawing.Point(206, 129);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(100, 20);
-            this.tbAddress.TabIndex = 4;
+            this.tbAddress.TabIndex = 6;
             // 
             // tbCity
             // 
@@ -229,7 +235,7 @@
             this.tbCity.Location = new System.Drawing.Point(723, 5);
             this.tbCity.Name = "tbCity";
             this.tbCity.Size = new System.Drawing.Size(100, 20);
-            this.tbCity.TabIndex = 5;
+            this.tbCity.TabIndex = 7;
             // 
             // tbCountry
             // 
@@ -237,7 +243,7 @@
             this.tbCountry.Location = new System.Drawing.Point(723, 36);
             this.tbCountry.Name = "tbCountry";
             this.tbCountry.Size = new System.Drawing.Size(100, 20);
-            this.tbCountry.TabIndex = 6;
+            this.tbCountry.TabIndex = 8;
             // 
             // tbRegion
             // 
@@ -245,7 +251,7 @@
             this.tbRegion.Location = new System.Drawing.Point(723, 67);
             this.tbRegion.Name = "tbRegion";
             this.tbRegion.Size = new System.Drawing.Size(100, 20);
-            this.tbRegion.TabIndex = 7;
+            this.tbRegion.TabIndex = 9;
             // 
             // tbPostal
             // 
@@ -253,7 +259,7 @@
             this.tbPostal.Location = new System.Drawing.Point(723, 98);
             this.tbPostal.Name = "tbPostal";
             this.tbPostal.Size = new System.Drawing.Size(100, 20);
-            this.tbPostal.TabIndex = 8;
+            this.tbPostal.TabIndex = 10;
             // 
             // tbPhone
             // 
@@ -261,7 +267,7 @@
             this.tbPhone.Location = new System.Drawing.Point(723, 129);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(100, 20);
-            this.tbPhone.TabIndex = 9;
+            this.tbPhone.TabIndex = 11;
             // 
             // label7
             // 
@@ -339,7 +345,7 @@
             this.tbFax.Location = new System.Drawing.Point(723, 163);
             this.tbFax.Name = "tbFax";
             this.tbFax.Size = new System.Drawing.Size(100, 20);
-            this.tbFax.TabIndex = 21;
+            this.tbFax.TabIndex = 12;
             // 
             // label4
             // 
@@ -357,7 +363,7 @@
             this.tbContact.Location = new System.Drawing.Point(206, 67);
             this.tbContact.Name = "tbContact";
             this.tbContact.Size = new System.Drawing.Size(100, 20);
-            this.tbContact.TabIndex = 1;
+            this.tbContact.TabIndex = 4;
             // 
             // label3
             // 
@@ -375,7 +381,7 @@
             this.tbCompany.Location = new System.Drawing.Point(206, 36);
             this.tbCompany.Name = "tbCompany";
             this.tbCompany.Size = new System.Drawing.Size(100, 20);
-            this.tbCompany.TabIndex = 0;
+            this.tbCompany.TabIndex = 3;
             // 
             // label6
             // 
@@ -392,9 +398,8 @@
             this.tbID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.tbID.Location = new System.Drawing.Point(206, 5);
             this.tbID.Name = "tbID";
-            this.tbID.ReadOnly = true;
             this.tbID.Size = new System.Drawing.Size(100, 20);
-            this.tbID.TabIndex = 3;
+            this.tbID.TabIndex = 2;
             // 
             // label5
             // 
@@ -412,7 +417,7 @@
             this.tbTitle.Location = new System.Drawing.Point(206, 98);
             this.tbTitle.Name = "tbTitle";
             this.tbTitle.Size = new System.Drawing.Size(100, 20);
-            this.tbTitle.TabIndex = 2;
+            this.tbTitle.TabIndex = 5;
             // 
             // label14
             // 
@@ -453,10 +458,40 @@
             this.button1.Location = new System.Drawing.Point(429, 456);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 13;
             this.button1.Text = "Update!";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmdInsert
+            // 
+            this.cmdInsert.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmdInsert.Location = new System.Drawing.Point(681, 3);
+            this.cmdInsert.Name = "cmdInsert";
+            this.tableLayoutPanel2.SetRowSpan(this.cmdInsert, 2);
+            this.cmdInsert.Size = new System.Drawing.Size(220, 61);
+            this.cmdInsert.TabIndex = 10;
+            this.cmdInsert.Text = "Insert";
+            this.cmdInsert.UseVisualStyleBackColor = true;
+            this.cmdInsert.Click += new System.EventHandler(this.cmdInsert_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(409, 62);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 13);
+            this.label17.TabIndex = 25;
+            // 
+            // lbMode
+            // 
+            this.lbMode.AutoSize = true;
+            this.lbMode.Location = new System.Drawing.Point(206, 155);
+            this.lbMode.Name = "lbMode";
+            this.lbMode.Size = new System.Drawing.Size(41, 13);
+            this.lbMode.TabIndex = 26;
+            this.lbMode.Text = "label18";
+            this.lbMode.Visible = false;
             // 
             // Form1
             // 
@@ -513,6 +548,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button cmdInsert;
+        private System.Windows.Forms.Label lbMode;
+        private System.Windows.Forms.Label label17;
     }
 }
 

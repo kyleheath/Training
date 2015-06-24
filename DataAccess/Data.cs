@@ -150,10 +150,8 @@ namespace DataAccess
         }
 
         public void Update()
-       
         {
             if (updatemodel.CustomerID != null)
-
             {
                 SqlConnection Connection1 = new SqlConnection("server=.\\SQLEXPRESS; Trusted_Connection=yes; database=NORTHWND");
                 try                               // '.' means this computer                  //database is the NAME of database,
@@ -189,6 +187,90 @@ namespace DataAccess
                 ", Phone=@Phone" +
                 ", Fax=@Fax" +
                 " where CustomerID=@CustomerID";
+
+                Command1.Parameters.Add(new SqlParameter("@CustomerID", SqlDbType.VarChar, 50));
+                Command1.Parameters.Add(new SqlParameter("@ContactName", SqlDbType.VarChar, 50));
+                Command1.Parameters.Add(new SqlParameter("@CompanyName", SqlDbType.VarChar, 50));
+                Command1.Parameters.Add(new SqlParameter("@ContactTitle", SqlDbType.VarChar, 50));
+                Command1.Parameters.Add(new SqlParameter("@Address", SqlDbType.VarChar, 50));
+                Command1.Parameters.Add(new SqlParameter("@City", SqlDbType.VarChar, 50));
+                Command1.Parameters.Add(new SqlParameter("@Country", SqlDbType.VarChar, 50));
+                Command1.Parameters.Add(new SqlParameter("@Region", SqlDbType.VarChar, 50));
+                Command1.Parameters.Add(new SqlParameter("@PostalCode", SqlDbType.VarChar, 50));
+                Command1.Parameters.Add(new SqlParameter("@Phone", SqlDbType.VarChar, 50));
+                Command1.Parameters.Add(new SqlParameter("@Fax", SqlDbType.VarChar, 50));
+
+                Command1.Parameters["@CustomerID"].Value = updatemodel.CustomerID;
+                Command1.Parameters["@ContactName"].Value = updatemodel.ContactName;
+                Command1.Parameters["@CompanyName"].Value = updatemodel.CompanyName;
+                Command1.Parameters["@ContactTitle"].Value = updatemodel.ContactTitle;
+                Command1.Parameters["@Address"].Value = updatemodel.Address;
+                Command1.Parameters["@City"].Value = updatemodel.City;
+                Command1.Parameters["@Country"].Value = updatemodel.Country;
+                Command1.Parameters["@Region"].Value = updatemodel.Region;
+                Command1.Parameters["@PostalCode"].Value = updatemodel.PostalCode;
+                Command1.Parameters["@Phone"].Value = updatemodel.Phone;
+                Command1.Parameters["@Fax"].Value = updatemodel.Fax;
+
+                Command1.ExecuteNonQuery();
+
+                Connection1.Close();
+            }
+        }
+            
+        public void Insert()
+       
+        {
+            if (updatemodel.CustomerID != null)
+
+            {
+                SqlConnection Connection1 = new SqlConnection("server=.\\SQLEXPRESS; Trusted_Connection=yes; database=NORTHWND");
+                try                               // '.' means this computer                  //database is the NAME of database,
+                {                                 // which would be used IF                   //not the type or kind
+                    Connection1.Open();          // on local server/internet
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }                   //e.Message prompts a message to the user
+                //telling him there was an error
+                //
+                //Always use try catch on connections
+                //It makes it so much smoother and easier
+                //to analyze if something foes awry
+
+                SqlCommand Command1 = new SqlCommand();
+                Command1.Connection = Connection1;
+                //Since we are having a new command outside of the original connection
+                //we must have a new connection
+                // *For future try to make connections numerical in programs*
+
+                Command1.CommandText = "insert into Customers" +
+                " (CustomerID" +
+                ", CompanyName" +
+                ", ContactName" +
+                ", ContactTitle" +
+                ", Address" +
+                ", City" +
+                ", Country" +
+                ", Region" +
+                ", PostalCode" +
+                ", Phone" +
+                ", Fax)" +
+
+                "values" +
+                " (@CustomerID" +
+                ", @ContactName" +
+                ", @CompanyName" +
+                ", @ContactTitle" +
+                ", @Address" +
+                ", @City" +
+                ", @Country" +
+                ", @Region" +
+                ", @PostalCode" +
+                ", @Phone" +
+                ", @Fax)";
+
 
                 Command1.Parameters.Add(new SqlParameter("@CustomerID", SqlDbType.VarChar, 50));
                 Command1.Parameters.Add(new SqlParameter("@ContactName", SqlDbType.VarChar, 50));

@@ -24,10 +24,10 @@ namespace WinFormWork
         {
             int row = 0;
             row = dGV1.CurrentRow.Index;
-            tbCompany.Text = dGV1[0, row].Value.ToString();
-            tbContact.Text = dGV1[1, row].Value.ToString();
-            tbTitle.Text = dGV1[2, row].Value.ToString();
-            tbID.Text = dGV1[3, row].Value.ToString();
+            tbID.Text = dGV1[0, row].Value.ToString();
+            tbCompany.Text = dGV1[1, row].Value.ToString();
+            tbContact.Text = dGV1[2, row].Value.ToString();
+            tbTitle.Text = dGV1[3, row].Value.ToString();
             tbAddress.Text = dGV1[4, row].Value.ToString();
             tbCity.Text = dGV1[5, row].Value.ToString();
             tbCountry.Text = dGV1[6, row].Value.ToString();
@@ -39,6 +39,8 @@ namespace WinFormWork
 
         private void cmdSearch_Click_1(object sender, EventArgs e)
         {
+            lbMode.Text = "update";
+
             mydata.Set(tbSearchCompany.Text, tbSearchContact.Text);
             dGV1.DataSource = mydata.Execute();
             if (dGV1.RowCount==0)
@@ -54,6 +56,8 @@ namespace WinFormWork
                 tableLayoutPanel3.Visible = true;
                 label15.Visible = true;
                 label16.Visible = true;
+                tbID.ReadOnly = true;
+                tbCompany.Focus();
             }
         }
 
@@ -73,10 +77,35 @@ namespace WinFormWork
             mydata.updatemodel.Fax = tbFax.Text;
 
             //TODO: Add all other fields from table
-            
-            mydata.Update();
 
+            if (lbMode.Text == "insert")
+                mydata.Insert();
+            else
+                mydata.Update();
+          
             cmdSearch_Click_1(sender, e);
+        }
+
+        private void cmdInsert_Click(object sender, EventArgs e)
+        {
+            lbMode.Text = "insert";
+            button1.Enabled = true;
+            tbID.Text = "";
+            tbCompany.Text = "";
+            tbContact.Text = "";
+            tbTitle.Text = "";
+            tbAddress.Text = "";
+            tbCity.Text = "";
+            tbCountry.Text = "";
+            tbRegion.Text = "";
+            tbPostal.Text = "";
+            tbPhone.Text = "";
+            tbFax.Text = "";
+            tableLayoutPanel3.Visible = true;
+            label15.Visible = true;
+            label16.Visible = true;
+            tbID.ReadOnly = false;
+            tbID.Focus();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
