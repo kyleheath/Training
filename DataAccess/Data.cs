@@ -175,6 +175,7 @@ namespace DataAccess
                 //Since we are having a new command outside of the original connection
                 //we must have a new connection
                 // *For future try to make connections numerical in programs*
+
                 Command1.CommandText = "update Customers set" +
                 " CustomerID=@CustomerID" +
                 ", ContactName=@ContactName" +
