@@ -120,9 +120,26 @@ namespace WinFormWork
 
         private void cmdDelete_Click(object sender, EventArgs e)
         {
-            mydata.Delete(tbID.Text);
+
+            const string message =
+                    "Are you sure you want to delete?";
+                const string caption = "Delete";
+                var result = MessageBox.Show(message, caption,
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    mydata.Delete(tbID.Text);
+                }
+
+            
+
             cmdSearch_Click_1(sender, e);
+
         }
+        
+
+        
         //TODO:
         //
         //ARE YOU SURE PROMPT ON DELETE BUTTON
