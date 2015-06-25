@@ -66,7 +66,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmdUpdate = new System.Windows.Forms.Button();
             this.cmdDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -93,7 +93,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(933, 493);
             this.tableLayoutPanel1.TabIndex = 100;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
             // tableLayoutPanel2
             // 
@@ -217,12 +216,12 @@
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.tbTitle, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.label14, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.label16, 2, 4);
-            this.tableLayoutPanel3.Controls.Add(this.label15, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.label12, 3, 4);
             this.tableLayoutPanel3.Controls.Add(this.lbMode, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.label17, 2, 2);
             this.tableLayoutPanel3.Controls.Add(this.label13, 3, 5);
+            this.tableLayoutPanel3.Controls.Add(this.label16, 2, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label17, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label15, 2, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 248);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -347,11 +346,11 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(128, 71);
+            this.label4.Location = new System.Drawing.Point(156, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "ContactName";
+            this.label4.Text = "Contact";
             // 
             // tbContact
             // 
@@ -365,11 +364,11 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(121, 40);
+            this.label3.Location = new System.Drawing.Point(149, 40);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "CompanyName";
+            this.label3.Text = "Company";
             // 
             // tbCompany
             // 
@@ -427,7 +426,7 @@
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(431, 126);
+            this.label16.Location = new System.Drawing.Point(431, 95);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(61, 26);
             this.label16.TabIndex = 24;
@@ -439,7 +438,7 @@
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(424, 33);
+            this.label15.Location = new System.Drawing.Point(424, 64);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(74, 26);
             this.label15.TabIndex = 23;
@@ -470,7 +469,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(409, 62);
+            this.label17.Location = new System.Drawing.Point(409, 31);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(0, 13);
             this.label17.TabIndex = 25;
@@ -490,7 +489,7 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.cmdUpdate, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.cmdDelete, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 445);
@@ -501,17 +500,17 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(927, 45);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
-            // button1
+            // cmdUpdate
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(194, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Update!";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.cmdUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmdUpdate.Enabled = false;
+            this.cmdUpdate.Location = new System.Drawing.Point(194, 11);
+            this.cmdUpdate.Name = "cmdUpdate";
+            this.cmdUpdate.Size = new System.Drawing.Size(75, 23);
+            this.cmdUpdate.TabIndex = 14;
+            this.cmdUpdate.Text = "Update!";
+            this.cmdUpdate.UseVisualStyleBackColor = true;
+            this.cmdUpdate.Click += new System.EventHandler(this.cmdUpdate_Click);
             // 
             // cmdDelete
             // 
@@ -522,6 +521,7 @@
             this.cmdDelete.TabIndex = 15;
             this.cmdDelete.Text = "Delete";
             this.cmdDelete.UseVisualStyleBackColor = true;
+            this.cmdDelete.Visible = false;
             this.cmdDelete.Click += new System.EventHandler(this.cmdDelete_Click);
             // 
             // Form1
@@ -583,7 +583,7 @@
         private System.Windows.Forms.Label lbMode;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cmdUpdate;
         private System.Windows.Forms.Button cmdDelete;
     }
 }

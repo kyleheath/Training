@@ -45,23 +45,25 @@ namespace WinFormWork
             dGV1.DataSource = mydata.Execute();
             if (dGV1.RowCount==0)
             {
-                button1.Enabled = false;
+                cmdUpdate.Enabled = false;
                 tableLayoutPanel3.Visible = false;
                 label15.Visible = false;
                 label16.Visible = false;
+                cmdDelete.Visible = false;
             }
             else
             {
-                button1.Enabled = true;
+                cmdUpdate.Enabled = true;
                 tableLayoutPanel3.Visible = true;
                 label15.Visible = true;
                 label16.Visible = true;
+                cmdDelete.Visible = true;
                 tbID.ReadOnly = true;
                 tbCompany.Focus();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cmdUpdate_Click(object sender, EventArgs e)
         {
 
             mydata.updatemodel.CustomerID = tbID.Text;
@@ -76,8 +78,6 @@ namespace WinFormWork
             mydata.updatemodel.Phone = tbPhone.Text;
             mydata.updatemodel.Fax = tbFax.Text;
 
-            //TODO: Add all other fields from table
-
             if (lbMode.Text == "insert")
                 mydata.Insert();
             else
@@ -89,7 +89,7 @@ namespace WinFormWork
         private void cmdInsert_Click(object sender, EventArgs e)
         {
             lbMode.Text = "insert";
-            button1.Enabled = true;
+            cmdUpdate.Enabled = true;
             tbID.Text = "";
             tbCompany.Text = "";
             tbContact.Text = "";
@@ -102,57 +102,32 @@ namespace WinFormWork
             tbPhone.Text = "";
             tbFax.Text = "";
             tableLayoutPanel3.Visible = true;
+            cmdDelete.Visible = false;
             label15.Visible = true;
             label16.Visible = true;
             tbID.ReadOnly = false;
             tbID.Focus();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void cmdDelete_Click(object sender, EventArgs e)
         {
 
             const string message =
                     "Are you sure you want to delete?";
-                const string caption = "Delete";
-                var result = MessageBox.Show(message, caption,
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    mydata.Delete(tbID.Text);
-                }
+            const string caption = "Delete";
+            var result = MessageBox.Show(message, caption,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                mydata.Delete(tbID.Text);
+            }
 
-            
+
 
             cmdSearch_Click_1(sender, e);
 
         }
-        
-
-        
-        //TODO:
-        //
-        //ARE YOU SURE PROMPT ON DELETE BUTTON
-        //HINT:::
-        //
-        //msdn "message box" class
-        //example at bottom
-        //
-        //put try catch around insert
-        //inside data class in insert method
-        //if insert fails don't die
-        //catch any exception
-        //
-        //delete should NOT show unless updating
     }
 }
