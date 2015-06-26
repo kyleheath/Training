@@ -122,12 +122,8 @@ namespace WinFormWork
             if (result == DialogResult.Yes)
             {
                 mydata.Delete(tbID.Text);
+                cmdSearch_Click_1(sender, e);
             }
-
-
-
-            cmdSearch_Click_1(sender, e);
-
         }
     }
 }
